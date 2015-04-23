@@ -1,0 +1,23 @@
+digix_homepage:
+    path:     /
+    defaults: { _controller: DigixBundle:Home:display }
+
+digix_wall:
+    path:     /wall
+    defaults: { _controller: DigixBundle:Wall:displayWall }
+
+digix_loginCheck:
+    path:     /logincheck
+    defaults: { _controller: DigixBundle:Login:checkLogin }
+
+account_reg_check:
+    path:     /registercheck
+    defaults: { _controller: DigixBundle:Register:register }
+
+default_controller:
+    path:     /def
+    defaults: { _controller: DigixBundle:Test:index }
+
+second_default_controller:
+    path:     /def2
+    defaults: { _controller: DigixBundle:SecondTest:index }

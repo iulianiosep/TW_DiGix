@@ -1,0 +1,285 @@
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+
+ @import url(http://weloveiconfonts.com/api/?family=zocial);
+
+ /* zocial */
+[class*="zocial-"]:before {
+  font-family: 'zocial', sans-serif;
+}
+
+ html,
+ body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+body {
+  padding-top: 70px;
+}
+footer {
+  padding: 30px 0;
+}
+
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+ @media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+  }
+
+  .row-offcanvas-right {
+    right: 0;
+  }
+
+  .row-offcanvas-left {
+    left: 0;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-right.active {
+    right: 50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%; /* 6 columns */
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%; /* 6 columns */
+  }
+}
+
+
+#frontpage{
+
+    background-color: #fff;
+    color: inherit;
+    margin-top: 35px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 30px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+
+
+}
+.top10 {
+  color: #fff;
+  background-color: #03aba4;
+  border: 1px solid;
+  border-color:#ddd;
+  display: block;
+  margin-bottom: -1px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  position: relative;
+
+
+}
+
+
+
+.profile-img-news{
+ 
+ border: 1px solid;
+ border-color: #ddd;
+ height: 50px;
+ width: 50px;
+ text-decoration-color: -moz-use-text-color;
+ text-decoration-line: none;
+ text-decoration-style: solid;
+
+}
+
+
+.profile-name-news{
+
+  color: #06847f;
+  font-weight: bold;
+}
+
+
+.news-link {
+
+ text-decoration: none;
+}
+
+.p-news {
+
+
+}
+
+
+.resize-profile-img {
+    background-color: #fff;
+   width: 100%;
+    height: auto;
+    border:1px solid;
+    border-color:#ddd;
+}
+
+
+.info-profile{
+
+  background-color:#fff;
+  border-right: 1px solid;
+  border-bottom:1px solid;
+  border-left:1px solid;
+  border-color: #ddd;
+  padding-top: 10px;
+}
+
+
+
+
+.social-slide {
+
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  float: left;
+  height: 36px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  transition-delay: 0s;
+  transition-duration: 0.3s;
+  transition-property: all;
+  transition-timing-function: ease;
+  width: 36px;
+}
+.social-slide:hover {
+  background-position: 0 -36px;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.8);
+}
+.twitter-hover {
+  background-image: url("http://alexandrumihai.info/TW/img/twitter-hover.png");
+}
+.facebook-hover {
+  background-image: url("http://alexandrumihai.info/TW/img/facebook-hover.png");
+}
+.google-hover {
+  background-image: url("http://alexandrumihai.info/TW/img/google-hover.png");
+}
+.tumblr-hover {
+  background-image: url("http://alexandrumihai.info/TW/img/tumblr-hover.png");
+}
+.instagram-hover {
+  background-image: url("http://alexandrumihai.info/TW/img/instagram-hover.png");
+}
+
+
+.social {
+float:right;
+
+}
+
+.buton-login{
+-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #03aba4;
+    border-bottom-color: -moz-use-text-color;
+    border-bottom-style: none;
+    border-bottom-width: medium;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: stretch stretch;
+    border-image-slice: 100% 100% 100% 100%;
+    border-image-source: none;
+    border-image-width: 1 1 1 1;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-left-color-value: -moz-use-text-color;
+    border-left-style-ltr-source: physical;
+    border-left-style-rtl-source: physical;
+    border-left-style-value: none;
+    border-left-width-ltr-source: physical;
+    border-left-width-rtl-source: physical;
+    border-left-width-value: medium;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+    border-right-color-value: -moz-use-text-color;
+    border-right-style-ltr-source: physical;
+    border-right-style-rtl-source: physical;
+    border-right-style-value: none;
+    border-right-width-ltr-source: physical;
+    border-right-width-rtl-source: physical;
+    border-right-width-value: medium;
+    border-top-color: -moz-use-text-color;
+    border-top-style: none;
+    border-top-width: medium;
+    color: #fff;
+    font-weight: bold;
+    width: 100px;
+     margin-left: 4px;
+}
+
+
+
+#tablist{
+padding: 3px 0;
+margin-left: 0;
+margin-bottom: 0;
+margin-top: 0.1em;
+font: bold 12px Verdana;
+}
+
+#tablist li{
+list-style: none;
+display: inline;
+margin: 0;
+}
+
+#tablist li a{
+padding: 3px 0.5em;
+margin-left: 3px;
+border: 1px solid #778;
+border-bottom: none;
+background: white;
+}
+
+#tablist li a:link, #tablist li a:visited{
+color: navy;
+}
+
+#tablist li a.current{
+background: #e9eaed;
+
+}
+
+#tabcontentcontainer{
+width: 400px;
+/* Insert Optional Height definition here to give all the content a unified height */
+padding: 5px;
+border: 1px solid black;
+}
+
+.tabcontent{
+display:none;
+}

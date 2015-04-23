@@ -1,0 +1,4 @@
+services:
+#    digix.example:
+#        class: DigixBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
