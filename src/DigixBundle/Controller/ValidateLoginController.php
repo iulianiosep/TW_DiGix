@@ -5,12 +5,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 
-use Facebook\FacebookRequest;
-use Facebook\GraphUser;
-use Facebook\FacebookRequestException;
-use Facebook\FacebookSession;
-use Facebook\FacebookRedirectLoginHelper;
-
 class WallController extends Controller{
 
      public function displayWallAction(){
@@ -20,17 +14,16 @@ class WallController extends Controller{
      	
      	$accountName=$firstName.' '.$lastName;
 
-        $fbses=$session->get('fbsession');
-        //FacebookSession::setDefaultApplication($session->get('credentials')['appId'], $session->get('credentials')['appSecret']);
+        if($session->get('sesiune'))
+            echo 'da';
+        else
+            echo 'nu';
+        return new Response();
 
-        return $this->render('DigixBundle:Wall:wall.html.twig',array('name'=>$accountName,
+        /*return $this->render('DigixBundle:Wall:wall.html.twig',array('name'=>$accountName,
         															 'website' => $session->get('sesiune'),
         															 'age' => $session->get('age'),
-                                                                     'picturesArray' => $session->get('photos')));
+                                                                     'profilepic' => $session->get('profilepic')));*/
      	//return $this->redirectToRoute('digix_wall');
-     }
-
-     public function displayModalAction(){
-        return $this->render('DigixBundle:Modal:modal.html.twig');
      }
 }

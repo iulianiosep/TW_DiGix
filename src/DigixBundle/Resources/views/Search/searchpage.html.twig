@@ -52,8 +52,8 @@
           </div>
           <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-            <li class="active"><a href="newsfeed.html">Tag them</a></li>
-              <li><a href="{{path('search_controller')}}">Search them</a></li>
+            <li><a href="{{path('digix_wall')}}">Tag them</a></li>
+              <li class="active"><a href="{{path('search_controller')}}">Search them</a></li>
               <li><a href="{{path('about_page')}}">About</a></li>
               <li><a href="contact.html">Support</a></li>
             </ul>
@@ -72,25 +72,6 @@
         </div><!-- /.container -->
 
       </nav><!-- /.navbar -->
-
-
-      <div id="openModal" class="modalDialog">
-        <div>
-          <a href="#close" title="Close" class="close">X</a>
-          <form method="post" action="{{path('tag_controller') }}">
-            <h3>Import photos from Facebook</h3>
-            <p>Your photos</p>
-
-            {% for key,value in picturesArray %}
-              <div class="containercls">
-                <img src="{{ value }}" width='240' height='auto'/>
-                <input name="{{ key }}" type="text" class="checkbox"/> 
-              </div>
-            {% endfor %}
-            <input type="submit" class="inputsubmit" value="Tag them!"/>
-          </form>
-        </div>
-      </div>
       
 
       <div class="container">
@@ -102,19 +83,16 @@
               <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Sidebar</button>
             </p>
 
-           
-
-           <!--{% for item in picturesArray %}
-              <div class="jumbotron">
-                <p class="p-news">Paragraf1
-                  <img src="{{ item }}" width="300" height="auto"/>
-                </p>
-              </div>
-           {% endfor %}-->
            <div class="jumbotron">
-            <p class="p-news">Welcome to DiGix! Use the upper buttons to import your photos! Have a tagging experience.
+            <p class="p-news">Welcome to DiGix! Use this page to search for your memories!
             </p>
           </div>
+
+          {% for item in photosArray %}
+            <div class="jumbotron">
+              <img src="{{item}}" width='500' height='auto'/>
+            </div>
+          {% endfor %}
     </p>
 
            
@@ -122,39 +100,13 @@
    </div><!--/.col-xs-12.col-sm-9-->
 
 
-
+<form method="post" action="{{ path('search_action') }}">
    <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
-    <h4 class="top10">{{ name }}</h4>
-    <div class="profile">
-
-   </div>
-
-   <div class="info-profile">
-     <ul class="fa-ul">
-      <!--<li><i class="fa-li fa fa-home"></i>Calarasi</li>-->
-      <li><i class="fa-li fa fa-birthday-cake"></i>{{ age }}</li>
-      <li><i class="fa-li fa fa-male"></i>Male</li>
-      <li><i class="fa-li fa fa-rss"></i>{{ website }}</li>
-      <li><i class="fa-li fa fa-edit"></i>Edit profile</li>
-    </ul>
+    <input name="tag_list" type="text" class="top10" placeholder="Search here"></input>
+    <input type="submit" class="top10" value="Search"></input>
   </div>
-
-</div>
-<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
-  <div class="list-group">
-    <h4 class="top10">Top</h4>
-    <a href="#" class="list-group-item">Link</a>
-    <a href="#" class="list-group-item">Link</a>
-    <a href="#" class="list-group-item">Link</a>
-    <a href="#" class="list-group-item">Link</a>
-    <a href="#" class="list-group-item">Link</a>
-    <a href="#" class="list-group-item">Link</a>
-    <a href="#" class="list-group-item">Link</a>
-    <a href="#" class="list-group-item">Link</a>
-    <a href="#" class="list-group-item">Link</a>
-    <a href="#" class="list-group-item">Link</a>
-  </div>
-</div><!--/.sidebar-offcanvas-->
+</form>
+<!--/.sidebar-offcanvas-->
 
 </div><!--/row-->
 

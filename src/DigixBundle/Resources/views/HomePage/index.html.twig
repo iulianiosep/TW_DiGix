@@ -16,6 +16,8 @@
         <link rel="stylesheet" href="{{ asset('bundles/digix/css/bootstrap.min.css') }}" />
         <link rel="stylesheet" href="{{ asset('bundles/digix/css/styles.css') }}" />
         <link rel="stylesheet" href="{{ asset('bundles/digix/css/font-awesome.css') }}" />
+        <link rel="stylesheet" href="{{ asset('bundles/digix/css/modal.css') }}" />
+        <link rel="stylesheet" href="{{ asset('bundles/digix/css/mainCSS.css') }}" />
     {% endstylesheets %}
   {% endblock %}
 
@@ -49,7 +51,7 @@
             </ul>
 
             <div class="social">
-              <a class="facebook-hover social-slide" href="#"></a>
+              <a class="facebook-hover social-slide" href="#openModal"></a>
               <a class="twitter-hover social-slide"  href="#"></a>
               <a class="google-hover social-slide"  href="#"></a>
               <a class="instagram-hover social-slide"  href="#"></a>
@@ -63,6 +65,20 @@
         </div><!-- /.container -->
 
       </nav><!-- /.navbar -->
+
+      <div id="openModal" class="modalDialog">
+        <div>
+          <a href="#close" title="Close" class="close">X</a>
+          <h3>Import photos from Facebook</h3>
+          <p>Your photos</p>
+          {% for i in 0..7 %}
+            <div class="containercls">
+              <img src="http://www.autocraze.com.au/wp-content/uploads/2014/11/Chevrolet-Camaro-4.jpg" width='100' height='auto'/>
+              <input type="checkbox" class="checkbox"/> 
+            </div>
+          {% endfor %}
+        </div>
+      </div>
 
       <div class="container">
 
@@ -104,14 +120,14 @@
             <br></br>
             <!--<a href="#"><img src="img/facebook-login.png"/></a>-->
             <!--<a href="#"><img src="img/twitter-login.png"/></a>-->
-            <a href="#">
+            <a href="{{path('facebook_login_controller')}}">
               {% image 'bundles/digix/images/facebook-login.png' %}
                 <img src="{{ asset('bundles/digix/images/facebook-login.png') }}"/>
               {% endimage %}
             </a>
-            <a href="#">
+            <a href="{{path('google_login_controller')}}">
               {% image 'bundles/digix/images/twitter-login.png' %}
-                <img src="{{ asset('bundles/digix/images/twitter-login.png') }}"/>
+                <img src="{{ asset('bundles/digix/images/google-login.png') }}"/>
               {% endimage %}
             </a>
           </p>

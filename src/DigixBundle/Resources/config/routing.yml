@@ -14,10 +14,46 @@ account_reg_check:
     path:     /registercheck
     defaults: { _controller: DigixBundle:Register:register }
 
-default_controller:
-    path:     /def
-    defaults: { _controller: DigixBundle:Test:index }
-
 second_default_controller:
     path:     /def2
     defaults: { _controller: DigixBundle:SecondTest:index }
+
+facebook_login_controller:
+    path:     /facebook-login
+    defaults: { _controller: DigixBundle:Facebook:index }
+
+twitter_login_controller:
+    path:     /twitter-login
+    defaults: { _controller: DigixBundle:Twitter:index }
+
+google_login_controller:
+    path:     /google-login
+    defaults: { _controller: DigixBundle:GooglePlus:index }
+
+flickr_login_controller:
+    path:     /flickr-login
+    defaults: { _controller: DigixBundle:Flickr:index }
+
+message_controller:
+    path:     /message
+    defaults: { _controller: DigixBundle:Message:index }
+
+display_modal_controller:
+    path:     /modal
+    defaults: { _controller: DigixBundle:Wall:displayModal }
+
+tag_controller:
+    path:     /tag
+    defaults: { _controller: DigixBundle:Tag:tag }
+
+search_controller:
+    path:     /search
+    defaults: { _controller: DigixBundle:Search:displaySearch }
+
+search_action:
+    path:     /search-action
+    defaults: { _controller: DigixBundle:Search:search }
+
+about_page:
+    path:     /about
+    defaults: { _controller: DigixBundle:AboutPage:displayAboutPage }
