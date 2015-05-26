@@ -20,25 +20,38 @@ class TagController extends Controller{
 
         $photos=array();
         $photos=$session->get('photos');
+        $videos=$session->get('videos');
 
         $tagObject = new TagDB();
         
         for($i='0';$i<(string)count($photos);$i++){
-            $tag=$request->request->get($i);
+            $tag=$request->request->get('photo'.$i);
             if($tag){
-                echo $tag.'-> '; 
-                echo '<a href="'.$photos[(int)$i].'">See</a><br>';
                 $em = $this->getDoctrine()->getManager(); 
 
-                //$tagObject->setId((int)$i);
                 $tagObject->setTagList($tag);
                 $tagObject->setUrl($photos[(int)$i]);
+                $tagObject->setType('photo');
 
                 $em->persist($tagObject);
                 $em->flush();
                 $em->clear();
             }
+        }
 
+        for($i='0';$i<(string)count($videos);$i++){
+            $tag=$request->request->get('video'.$i);
+            if($tag){
+                $em = $this->getDoctrine()->getManager(); 
+
+                $tagObject->setTagList($tag);
+                $tagObject->setUrl($videos[(int)$i]);
+                $tagObject->setType('video');
+                
+                $em->persist($tagObject);
+                $em->flush();
+                $em->clear();
+            }
         }
         return $this->redirectToRoute('digix_wall'); 
        

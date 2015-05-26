@@ -26,7 +26,8 @@ class WallController extends Controller{
         return $this->render('DigixBundle:Wall:wall.html.twig',array('name'=>$accountName,
         															 'website' => $session->get('sesiune'),
         															 'age' => $session->get('age'),
-                                                                     'picturesArray' => $session->get('photos')));
+                                                                     'picturesArray' => $session->get('photos'),
+                                                                     'videosArray' => $session->get('videos')));
      	//return $this->redirectToRoute('digix_wall');
      }
 

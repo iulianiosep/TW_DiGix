@@ -88,21 +88,34 @@
             </p>
           </div>
 
+          <div class="jumbotron">
           {% for item in photosArray %}
-            <div class="jumbotron">
+            
               <img src="{{item}}" width='500' height='auto'/>
-            </div>
+              <br><br>
+          {% endfor %}
+          </div>
+
+          {% for item in videosArray %}
+          <div class="jumbotron">
+            <video width='240' height='auto' controls>
+                  <source src="{{ item }}">
+            </video>
+            <br><br>
+          </div>
           {% endfor %}
     </p>
-
-           
-     
    </div><!--/.col-xs-12.col-sm-9-->
 
 
 <form method="post" action="{{ path('search_action') }}">
    <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
     <input name="tag_list" type="text" class="top10" placeholder="Search here"></input>
+    <select class="top10" name="selectBox">
+      <option value="photos">Photos</option>
+      <option value="videos">Videos</option>
+      <option value="all">All</option>
+    </select>
     <input type="submit" class="top10" value="Search"></input>
   </div>
 </form>

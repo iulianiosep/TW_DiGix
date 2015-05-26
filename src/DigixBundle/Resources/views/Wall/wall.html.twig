@@ -80,13 +80,23 @@
           <form method="post" action="{{path('tag_controller') }}">
             <h3>Import photos from Facebook</h3>
             <p>Your photos</p>
-
             {% for key,value in picturesArray %}
               <div class="containercls">
                 <img src="{{ value }}" width='240' height='auto'/>
-                <input name="{{ key }}" type="text" class="checkbox"/> 
+                <input name="{{ 'photo'~key }}" type="text" class="checkbox"/> 
               </div>
             {% endfor %}
+
+            <p>Your videos</p>
+            {% for key,value in videosArray %}
+              <div class="containercls">
+                <video width='240' height='auto' controls>
+                  <source src="{{ value }}">
+                </video>
+                <input name="{{ 'video'~key }}" type="text" class="checkbox"/> 
+              </div>
+            {% endfor %}
+
             <input type="submit" class="inputsubmit" value="Tag them!"/>
           </form>
         </div>

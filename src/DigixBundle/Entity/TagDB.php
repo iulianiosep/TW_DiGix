@@ -30,7 +30,11 @@ class TagDB
      */
     private $tagList;
 
-
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=255)
+     */
+    private $type;
     /**
      * Get id
      *
@@ -85,5 +89,28 @@ class TagDB
     public function getTagList()
     {
         return $this->tagList;
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     * @return TagDB
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string 
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 }

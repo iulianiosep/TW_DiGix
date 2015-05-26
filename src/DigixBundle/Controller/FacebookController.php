@@ -35,21 +35,32 @@ class FacebookController extends Controller{
 
             $this->getRequest()->getSession()->set('fbsession',$session);
             $this->getRequest()->getSession()->set('credentials',array('appId'=>$loginCredentials->facebookAppId,'appSecret'=>$loginCredentials->facebookAppSecret));
+            
             $request = new FacebookRequest($session, 'GET', '/me/photos');
             $response = $request->execute();
             $photosResponse=$response->getGraphObject();
+
+            $request = new FacebookRequest($session, 'GET', '/me/videos?type=uploaded');
+            $response = $request->execute();
+            $videosResponse=$response->getGraphObject();
 
             //var_dump($photosResponse);
             $photosArray=$photosResponse->asArray();
             $photos=array();
             foreach($photosArray['data'] as $photoItem){
                 array_push($photos,$photoItem->images[0]->source);
-                //echo "<img src='".$photoItem->images[0]->source."' width='500' height='auto'/>";
             }
+
+            $videosArray=$videosResponse->asArray();
+            $videos=array();
+            foreach($videosArray['data'] as $videoItem){
+                array_push($videos,$videoItem->source);
+            }
+
             $this->getRequest()->getSession()->set('photos',$photos);
+            $this->getRequest()->getSession()->set('videos',$videos);
             
             return $this->redirectToRoute('digix_wall');
-
         }
         else{
             //echo "<a href=".$helper->getLoginUrl().">.Login with fb</a><br>";
